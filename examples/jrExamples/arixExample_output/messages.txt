@@ -1,0 +1,4 @@
+KLEE: ERROR: /home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:11: ASSERTION FAIL: t > 0 && x > -1 && x < 2
+KLEE: NOTE: now ignoring this error at this location
+KLEE: Memory cap NOT exceeded!
+

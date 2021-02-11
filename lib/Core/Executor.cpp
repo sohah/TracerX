@@ -4876,6 +4876,8 @@ void Executor::terminateStateOnError(ExecutionState &state,
     if (!EmitAllErrors)
       klee_message("NOTE: now ignoring this error at this location");
 
+     klee_message("SH - inside klee");
+
     std::string MsgString;
     llvm::raw_string_ostream msg(MsgString);
     msg << "Error: " << message << "\n";

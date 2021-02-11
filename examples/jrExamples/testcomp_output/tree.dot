@@ -1,0 +1,23 @@
+digraph search_tree {
+Node1 [shape=record,label="{1: main\l  %1 = alloca i32, align 4\l|{<s0>F|<s1>T}}"];
+Node1:s0 -> Node2;
+Node1:s1 -> Node5;
+Node2 [shape=record,label="{2: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/testcomp_example.c:13
+\l!(1 = b1[3].b1[2].b1[1].b1[0])\l|{<s0>F|<s1>T}}"];
+Node2:s0 -> Node3;
+Node2:s1 -> Node4;
+Node3 [shape=record,label="{3: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/testcomp_example.c:16
+\l!(1 = b2[3].b2[2].b2[1].b2[0])\l(terminal #1)\l}"];
+Node4 [shape=record,label="{4: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/testcomp_example.c:14
+\l(1 = b2[3].b2[2].b2[1].b2[0])\l(terminal #2)\l}"];
+Node5 [shape=record,label="{5: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/testcomp_example.c:11
+\l(1 = b1[3].b1[2].b1[1].b1[0])\l|{<s0>F|<s1>T}}"];
+Node5:s0 -> Node6;
+Node5:s1 -> Node7;
+Node6 [shape=record,label="{6: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/testcomp_example.c:16
+\l!(1 = b2[3].b2[2].b2[1].b2[0])\l(subsumed)\l}"];
+Node7 [shape=record,label="{7: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/testcomp_example.c:14
+\l(1 = b2[3].b2[2].b2[1].b2[0])\l(subsumed)\l}"];
+Node6 -> Node3 [style=dashed,label="1"];
+Node7 -> Node4 [style=dashed,label="2"];
+}

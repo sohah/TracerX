@@ -1,0 +1,6 @@
+Error: ASSERTION FAIL: x <= 3
+File: /home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c
+Line: 25
+assembly.ll line: 91
+Stack: 
+	#000000091 in main () at /home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:25

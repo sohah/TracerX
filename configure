@@ -2469,6 +2469,8 @@ else
   llvm_src=""""
 fi
 
+
+
   LLVM_SRC=$llvm_src
 
 
@@ -3530,7 +3532,16 @@ else
     with_llvmobj=`llvm-config --obj-root`
 fi
 
+# with_llvmsrc="/home/soha/git/tracerXMaster/llvm-3.4.2"
+# with_llvmobj="/home/soha/git/tracerXMaster/llvm-3.4.2"
+if [ -e ${with_llvmsrc}/Makefile.rules ]; then
+  echo "myllvm = found ---- ${with_llvmsrc}/Makefile.rules"
+else
+  echo "myllvm = not found  ---- ${with_llvmsrc}/Makefile.rules"
+fi
+
 if test ! -f ${with_llvmsrc}/Makefile.rules; then
+   echo "my echois here = ${with_llvmsrc}/Makefile.rules"
    as_fn_error $? "invalid llvmsrc directory: ${with_llvmsrc}" "$LINENO" 5
 fi
 if test ! -f ${with_llvmobj}/Makefile.config; then
@@ -6942,4 +6953,3 @@ if test -n "$ac_unrecognized_opts" && test "$enable_option_checking" != no; then
   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
 $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
 fi
-

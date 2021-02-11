@@ -1,0 +1,42 @@
+digraph search_tree {
+Node1 [shape=record,style=bold,label="{1: main\l  %1 = alloca i32, align 4\l|{<s0>F|<s1>T}}"];
+Node1:s0 -> Node2 [style=bold,label="ERR"];
+Node1:s1 -> Node3;
+Node2 [shape=record,style=bold,label="{2: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:11
+\l!(0 \< t[3].t[2].t[1].t[0])\lASSERTION FAIL: /home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:11
+\l(terminal #1)\l}"];
+Node3 [shape=record,label="{3: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:11
+\l(0 \< t[3].t[2].t[1].t[0])\l|{<s0>F|<s1>T}}"];
+Node3:s0 -> Node4;
+Node3:s1 -> Node5;
+Node4 [shape=record,label="{4: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:11
+\l!(4294967295 \< x[3].x[2].x[1].x[0])\l(subsumed)\l}"];
+Node5 [shape=record,label="{5: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:11
+\l(4294967295 \< x[3].x[2].x[1].x[0]) ITP\l|{<s0>F|<s1>T}}"];
+Node5:s0 -> Node6;
+Node5:s1 -> Node7;
+Node6 [shape=record,label="{6: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:11
+\l!(x[3].x[2].x[1].x[0] \< 2)\l(subsumed)\l}"];
+Node7 [shape=record,label="{7: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:11
+\l(x[3].x[2].x[1].x[0] \< 2) ITP\l|{<s0>F|<s1>T}}"];
+Node7:s0 -> Node8;
+Node7:s1 -> Node11;
+Node8 [shape=record,label="{8: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:17
+\l!(1 \< t[3].t[2].t[1].t[0])\l|{<s0>F|<s1>T}}"];
+Node8:s0 -> Node9;
+Node8:s1 -> Node10;
+Node9 [shape=record,label="{9: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:25
+\l!(0 \< x[3].x[2].x[1].x[0]) ITP\l(terminal #4)\l}"];
+Node10 [shape=record,label="{10: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:22
+\l(0 \< x[3].x[2].x[1].x[0])\l(terminal #5)\l}"];
+Node11 [shape=record,label="{11: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:14
+\l(1 \< t[3].t[2].t[1].t[0])\l|{<s0>F|<s1>T}}"];
+Node11:s0 -> Node12;
+Node11:s1 -> Node13;
+Node12 [shape=record,label="{12: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:25
+\l!(0 \< x[3].x[2].x[1].x[0]) ITP\l(terminal #6)\l}"];
+Node13 [shape=record,label="{13: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/arixExample.c:22
+\l(0 \< x[3].x[2].x[1].x[0])\l(terminal #7)\l}"];
+Node4 -> Node2 [style=dashed,label="1"];
+Node6 -> Node2 [style=dashed,label="2"];
+}

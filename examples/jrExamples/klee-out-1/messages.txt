@@ -1,0 +1,3 @@
+KLEE: ERROR: /home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:25: ASSERTION FAIL: x <= 3
+KLEE: NOTE: now ignoring this error at this location
+KLEE: SH - inside klee

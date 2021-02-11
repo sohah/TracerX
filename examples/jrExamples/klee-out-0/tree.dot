@@ -1,0 +1,50 @@
+digraph search_tree {
+Node1 [shape=record,style=bold,label="{1: main\l  %1 = alloca i32, align 4\l|{<s0>F|<s1>T}}"];
+Node1:s0 -> Node2 [style=bold,label="ERR"];
+Node1:s1 -> Node9 [style=bold,label="ERR"];
+Node2 [shape=record,style=bold,label="{2: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:14
+\l!(8 \< p1[3].p1[2].p1[1].p1[0])\l|{<s0>F|<s1>T}}"];
+Node2:s0 -> Node3;
+Node2:s1 -> Node6 [style=bold,label="ERR"];
+Node3 [shape=record,label="{3: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:18
+\l!(8 \< p2[3].p2[2].p2[1].p2[0])\l|{<s0>F|<s1>T}}"];
+Node3:s0 -> Node4;
+Node3:s1 -> Node5;
+Node4 [shape=record,label="{4: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:23
+\l!(8 \< p3[3].p3[2].p3[1].p3[0])\l(terminal #1)\l}"];
+Node5 [shape=record,label="{5: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:21
+\l(8 \< p3[3].p3[2].p3[1].p3[0])\l(terminal #2)\l}"];
+Node6 [shape=record,style=bold,label="{6: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:16
+\l(8 \< p2[3].p2[2].p2[1].p2[0])\l|{<s0>F|<s1>T}}"];
+Node6:s0 -> Node7;
+Node6:s1 -> Node8 [style=bold,label="ERR"];
+Node7 [shape=record,label="{7: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:23
+\l!(8 \< p3[3].p3[2].p3[1].p3[0])\l(subsumed)\l}"];
+Node8 [shape=record,style=bold,label="{8: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:21
+\l(8 \< p3[3].p3[2].p3[1].p3[0])\lASSERTION FAIL: /home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:25
+\l(terminal #4)\l}"];
+Node9 [shape=record,style=bold,label="{9: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:12
+\l(8 \< p1[3].p1[2].p1[1].p1[0])\l|{<s0>F|<s1>T}}"];
+Node9:s0 -> Node10;
+Node9:s1 -> Node11 [style=bold,label="ERR"];
+Node10 [shape=record,label="{10: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:18
+\l!(8 \< p2[3].p2[2].p2[1].p2[0])\l(subsumed)\l}"];
+Node11 [shape=record,style=bold,label="{11: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:16
+\l(8 \< p2[3].p2[2].p2[1].p2[0])\l|{<s0>F|<s1>T}}"];
+Node11:s0 -> Node12;
+Node11:s1 -> Node13 [style=bold,label="ERR"];
+Node12 [shape=record,label="{12: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:23
+\l!(8 \< p3[3].p3[2].p3[1].p3[0])\l(subsumed)\l}"];
+Node13 [shape=record,style=bold,label="{13: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:21
+\l(8 \< p3[3].p3[2].p3[1].p3[0])\l|{<s0>F|<s1>T}}"];
+Node13:s0 -> Node14 [style=bold,label="ERR"];
+Node13:s1 -> Node15;
+Node14 [shape=record,style=bold,label="{14: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:25
+\l!((6 + x[3].x[2].x[1].x[0]) \<= 3)\lASSERTION FAIL: /home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:25
+\l(terminal #7)\l}"];
+Node15 [shape=record,label="{15: main\l/home/soha/git/tracerXMaster/tracerx/examples/jrExamples/add.c:25
+\l((6 + x[3].x[2].x[1].x[0]) \<= 3)\l(terminal #8)\l}"];
+Node7 -> Node4 [style=dashed,label="1"];
+Node10 -> Node3 [style=dashed,label="2"];
+Node12 -> Node4 [style=dashed,label="3"];
+}

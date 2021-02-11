@@ -39,9 +39,10 @@
 #endif
 
 #include <errno.h>
-
+#include<iostream>
 using namespace llvm;
 using namespace klee;
+using namespace std;
 
 namespace {
 cl::opt<bool> ReadablePosix(
@@ -328,6 +329,8 @@ void SpecialFunctionHandler::handleAssertFail(
         state, "SPECULATION FAIL: " + readStringAtAddress(state, arguments[0]),
         Executor::Assert);
   } else {
+
+    cout<< "inside klee";
     executor.terminateStateOnError(
         state, "ASSERTION FAIL: " + readStringAtAddress(state, arguments[0]),
         Executor::Assert);
